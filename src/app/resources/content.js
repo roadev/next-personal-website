@@ -72,35 +72,98 @@ const about = {
         description: <>Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology.</>
     },
     work: {
-        display: true, // set to false to hide this section
+        display: true,
         title: 'Work Experience',
         experiences: [
             {
-                company: 'FLY',
-                timeframe: '2022 - Present',
-                role: 'Senior Design Engineer',
+                company: 'Soil Net LLC',
+                timeframe: 'Aug 2024 – Present',
+                role: 'Data Science Project Supervisor',
                 achievements: [
-                    <>Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user engagement and 30% faster load times.</>,
-                    <>Spearheaded the integration of AI tools into design workflows, enabling designers to iterate 50% faster.</>
+                    <>Led the "Digital Agronomist" project’s technical development, guiding frontend (React), backend (Node.js), database (MariaDB), and Python ETL implementations.</>,
+                    <>Applied statistical and machine learning methods to improve the accuracy of nutrient predictions (e.g., nitrogen, phosphorus, potassium) and integrated weather data for a holistic view on nutrient management.</>,
+                    <>Refined data cleaning and processing techniques to ensure high-quality datasets for agronomic modeling.</>
                 ],
-                images: [ // optional: leave the array empty if you don't want to display images
-                    {
-                        src: '/images/projects/project-01/cover-01.jpg',
-                        alt: 'Once UI Project',
-                        width: 16,
-                        height: 9
-                    }
-                ]
+                images: []
             },
             {
-                company: 'Creativ3',
-                timeframe: '2018 - 2022',
-                role: 'Lead Designer',
+                company: 'Soil Net LLC',
+                timeframe: 'May 2024 – Aug 2024',
+                role: 'Research Collaborator (Soil Science and Agronomy)',
                 achievements: [
-                    <>Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.</>,
-                    <>Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue.</>
+                    <>Conducted research for the "Digital Agronomist" project while awaiting STEM OPT authorization.</>,
+                    <>Mentored interns on data science solutions, covering database design, API integrations, and predictive models for agronomy.</>
                 ],
-                images: [ ]
+                images: []
+            },
+            {
+                company: 'University of Wisconsin-Whitewater',
+                timeframe: 'Aug 2022 – Aug 2024',
+                role: 'Graduate Assistant',
+                achievements: [
+                    <>Mentored 20+ students in Python programming courses, enhancing their skills in programming projects.</>,
+                    <>Graded and reviewed over 500 labs and assignments, providing constructive feedback to support student learning.</>
+                ],
+                images: []
+            },
+            {
+                company: <a href="https://uruit.com/" target="_blank" rel="noopener noreferrer">UruIT</a>,
+                timeframe: 'Nov 2020 – Apr 2022',
+                role: 'Sr. Full Stack Developer',
+                achievements: [
+                    <>Developed a high-performance login widget using the Native Web Components API, compatible with React and Vue projects.</>,
+                    <>Reduced technical debt by 60% with a cross-framework solution, enabling faster deployment and streamlined maintenance.</>
+                ],
+                images: []
+            },
+            {
+                company: 'Bunny Studio',
+                timeframe: 'Jun 2019 – Oct 2020',
+                role: 'Sr. Full Stack Engineer',
+                achievements: [
+                    <>Rebuilt a legacy AngularJS UI system with ReactJS & NextJS, improving page load times by 80% and boosting user engagement.</>,
+                    <>Resolved critical bugs in systems using Node.js, PHP, Python, and Elixir, and improved code quality through comprehensive reviews.</>
+                ],
+                images: []
+            },
+            {
+                company: 'VIGPRO SAS',
+                timeframe: 'Jun 2018 – Jun 2019',
+                role: 'Sr. Full Stack Developer',
+                achievements: [
+                    <>Designed a PostgreSQL database and backend with Ruby on Rails and Node.js, optimizing API integrations and reducing costs.</>,
+                    <>Led three cross-functional teams, ensuring high-quality code and best practices across Ruby, JavaScript, and PHP projects.</>,
+                    <>Automated CI/CD pipelines for AWS, improving deployment reliability and reducing release times.</>
+                ],
+                images: []
+            },
+            {
+                company: 'Imaginamos Digital Agency',
+                timeframe: 'Dec 2017 – May 2018',
+                role: 'Full Stack Developer',
+                achievements: [
+                    <>Developed a high-performance e-commerce platform with NextJS and Redux, boosting online sales for La 14 supermarket.</>,
+                    <>Enhanced user experience for Cardash through dynamic UI components using React and GraphQL.</>
+                ],
+                images: []
+            },
+            {
+                company: 'Devhack.co',
+                timeframe: 'Dec 2017 – Jul 2018',
+                role: 'Teacher of React and React Native Courses',
+                achievements: [
+                    <>Instructed ReactJS courses with a focus on Redux and mobile-first design, mentoring students in modern web development practices.</>
+                ],
+                images: []
+            },
+            {
+                company: 'Pulpo WMS',
+                timeframe: 'Sep 2016 – Dec 2017',
+                role: 'Frontend Developer',
+                achievements: [
+                    <>Developed and optimized Material Design web components for Pulpo WMS using React, Redux, and ImmutableJS.</>
+                ],
+                images: []
             }
         ]
     },
