@@ -1,4 +1,4 @@
-const baseURL = 'demo.app'
+const baseURL = 'juanroa.dev'
 
 // Enable localization
 const i18n = false;
@@ -12,9 +12,9 @@ const i18nOptions = {
 const routes = {
     '/':        true,
     '/about':   true,
-    '/work':    true,
-    '/blog':    true,
-    '/gallery': true,
+    // '/work':    true,
+    // '/blog':    true,
+    // '/gallery': true,
 }
 
 // Enable password protection on selected routes
