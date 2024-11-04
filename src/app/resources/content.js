@@ -8,7 +8,7 @@ const person = {
     },
     role:      'Software Engineer',
     avatar:    '/images/avatar.jpg',
-    location:  'America/Chicago',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+    location:  'America/Chicago',
     languages: ['English', 'Spanish']  // optional: Leave the array empty if you don't want to display languages
 }
 
@@ -19,7 +19,6 @@ const newsletter = {
 }
 
 const social = [
-    // Links are automatically displayed.
     // Import new icons in /once-ui/icons.ts
     {
         name: 'GitHub',
@@ -48,7 +47,7 @@ const home = {
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
     headline: <>Software Engineer and Data Science researcher</>,
-    subline: <>I'm Juan, a software engineer at <InlineCode>Soil Net LLC</InlineCode>.</>
+    subline: 'Juan is a Software Engineer with over 8 years of experience in full-stack development, data science, and cloud computing. He excels in leading technical projects, optimizing software performance, and applying machine learning to real-world agricultural challenges.'
 }
 
 const about = {
@@ -69,7 +68,7 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology.</>
+        description: <>Juan is a Software Engineer with over 8 years of experience in full-stack development, data science, and cloud computing. He excels in leading technical projects, optimizing software performance, and applying machine learning to real-world agricultural challenges.</>
     },
     work: {
         display: true,
@@ -107,7 +106,7 @@ const about = {
                 images: []
             },
             {
-                company: <a href="https://uruit.com/" target="_blank" rel="noopener noreferrer">UruIT</a>,
+                company: 'UruIT',
                 timeframe: 'Nov 2020 – Apr 2022',
                 role: 'Sr. Full Stack Developer',
                 achievements: [
@@ -186,34 +185,14 @@ const about = {
         title: 'Technical skills',
         skills: [
             {
-                title: 'Figma',
-                description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-                images: [
-                    {
-                        src: '/images/projects/project-01/cover-02.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
-                    {
-                        src: '/images/projects/project-01/cover-03.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
-                ]
+                title: 'React',
+                description: '',
+                images: []
             },
             {
                 title: 'Next.js',
-                description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-                images: [
-                    {
-                        src: '/images/projects/project-01/cover-04.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
-                ]
+                description: '',
+                images: []
             }
         ]
     }
