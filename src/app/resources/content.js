@@ -163,6 +163,17 @@ const about = {
                     <>Developed and optimized Material Design web components for Pulpo WMS using React, Redux, and ImmutableJS.</>
                 ],
                 images: []
+            },
+            {
+                company: 'Creadev.co',
+                timeframe: 'Jan 2015 – Sep 2016',
+                role: 'Founder / Frontend Developer',
+                achievements: [
+                    <>Designed and developed web applications for startups, focusing on modern UI/UX principles, responsive design, and performance optimization.</>,
+                    <>Led frontend development using JavaScript, React, and modern web technologies to deliver scalable and maintainable solutions.</>,
+                    <>Collaborated with early-stage businesses to translate ideas into functional MVPs, guiding product development from concept to deployment.</>
+                ],
+                images: []
             }
         ]
     },
