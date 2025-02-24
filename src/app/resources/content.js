@@ -196,16 +196,97 @@ const about = {
         title: 'Technical skills',
         skills: [
             {
-                title: 'React',
-                description: '',
-                images: []
+              title: "React",
+              description: <></>,
+              // optional: leave the array empty if you don't want to display images
+              images: [
+                {
+                  src: "/images/projects/soilnet/digital_agronomist_1.png",
+                  alt: "Digital Agronomist Dashboard 1",
+                  width: 16,
+                  height: 9,
+                },
+                {
+                  src: "/images/projects/bunnystudio/home.png",
+                  alt: "Project image",
+                  width: 16,
+                  height: 9,
+                },
+                {
+                    src: "/images/projects/UWW/neonatology_1.png",
+                    alt: "Neonatology Outcomes",
+                    width: 16,
+                    height: 9,
+                },
+              ],
             },
             {
-                title: 'Next.js',
-                description: '',
-                images: []
-            }
-        ]
+              title: "Next.js",
+              description: <></>,
+              images: [
+                {
+                  src: "/images/projects/bunnystudio/DRI_React_Components.png",
+                  alt: "Project image",
+                  width: 16,
+                  height: 9,
+                },
+              ],
+            },
+            {
+                title: "Python / ETL / Data Engineering",
+                description: <>Python for Machine Learing and Data Science</>,
+                images: [
+                  {
+                    src: "/images/projects/soilnet/digital_agronomist_3.png",
+                    alt: "Data Science for Agronomy",
+                    width: 16,
+                    height: 9,
+                  },
+                  {
+                    src: "/images/projects/soilnet/digital_agronomist_4.png",
+                    alt: "Machine Learning for Agronomy",
+                    width: 16,
+                    height: 9,
+                  },
+                ],
+              },
+              {
+                title: "Typescript & Javascript",
+                description: <>Python for Machine Learing and Data Science</>,
+                images: [
+                  {
+                    src: "/images/projects/uruit/bloomberg_login.png",
+                    alt: "Data Science for Agronomy",
+                    width: 16,
+                    height: 9,
+                  },
+                //   {
+                //     src: "/images/projects/soilnet/digital_agronomist_4.png",
+                //     alt: "Machine Learning for Agronomy",
+                //     width: 16,
+                //     height: 9,
+                //   },
+                ],
+              },
+              {
+                title: "React Native",
+                description: <></>,
+                images: [
+                  {
+                    src: "/images/projects/vigpro/aliciapp.png",
+                    alt: "Screenshots for Aliciapp",
+                    width: 16,
+                    height: 9,
+                  },
+                //   {
+                //     src: "/images/projects/soilnet/digital_agronomist_4.png",
+                //     alt: "Machine Learning for Agronomy",
+                //     width: 16,
+                //     height: 9,
+                //   },
+                ],
+              },
+          ],
     }
 }
 
