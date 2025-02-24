@@ -8,7 +8,7 @@ const person = {
     },
     role:      'Software Engineer',
     avatar:    '/images/avatar.jpg',
-    location:  'America/Chicago',
+    location:  'America/Bogota',
     languages: ['English', 'Spanish']  // optional: Leave the array empty if you don't want to display languages
 }
 
@@ -47,7 +47,7 @@ const home = {
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
     headline: <>Software Engineer and Data Science researcher</>,
-    subline: 'Juan is a Software Engineer with over 8 years of experience in full-stack development, data science, and cloud computing. He excels in leading technical projects, optimizing software performance, and applying machine learning to real-world agricultural challenges.'
+    subline: 'Juan is a Software Engineer with over 9 years of experience in full-stack development, data science, and cloud computing. He excels in leading technical projects, optimizing software performance, and applying machine learning to real-world agricultural challenges.'
 }
 
 const about = {
@@ -225,6 +225,12 @@ const about = {
               description: <></>,
               images: [
                 {
+                    src: "/images/projects/soilnet/digital_agronomist_5.png",
+                    alt: "Digital Agronomist landing",
+                    width: 16,
+                    height: 9,
+                },
+                {
                   src: "/images/projects/bunnystudio/DRI_React_Components.png",
                   alt: "Project image",
                   width: 16,
@@ -245,6 +251,12 @@ const about = {
                   {
                     src: "/images/projects/soilnet/digital_agronomist_4.png",
                     alt: "Machine Learning for Agronomy",
+                    width: 16,
+                    height: 9,
+                  },
+                  {
+                    src: "/images/projects/soilnet/digital_agronomist_6.png",
+                    alt: "Ada Boost evaluation",
                     width: 16,
                     height: 9,
                   },
