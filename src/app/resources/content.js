@@ -192,7 +192,7 @@ const about = {
         ]
     },
     technical: {
-        display: true, // set to false to hide this section
+        display: true,
         title: 'Technical skills',
         skills: [
             {
@@ -215,6 +215,12 @@ const about = {
                 {
                     src: "/images/projects/UWW/neonatology_1.png",
                     alt: "Neonatology Outcomes",
+                    width: 16,
+                    height: 9,
+                },
+                {
+                    src: "/images/projects/pulpo/pulpo_landing.png",
+                    alt: "Pulpo WMS landing page",
                     width: 16,
                     height: 9,
                 },
@@ -245,6 +251,12 @@ const about = {
                   {
                     src: "/images/projects/soilnet/digital_agronomist_3.png",
                     alt: "Data Science for Agronomy",
+                    width: 16,
+                    height: 9,
+                  },
+                  {
+                    src: "/images/projects/UWW/digital_agronomist_approach.png",
+                    alt: "Digital Agronomist ETL approach",
                     width: 16,
                     height: 9,
                   },
@@ -281,6 +293,18 @@ const about = {
                 ],
               },
               {
+                title: "SQL (MariabDB, MySQL, PostgreSQL)",
+                description: <>SQL, Database design, ERD</>,
+                images: [
+                  {
+                    src: "/images/projects/UWW/digital_agronomist_erd.png",
+                    alt: "Data Science for Agronomy",
+                    width: 16,
+                    height: 9,
+                  },
+                ],
+              },
+              {
                 title: "React Native",
                 description: <></>,
                 images: [
@@ -290,12 +314,6 @@ const about = {
                     width: 16,
                     height: 9,
                   },
-                //   {
-                //     src: "/images/projects/soilnet/digital_agronomist_4.png",
-                //     alt: "Machine Learning for Agronomy",
-                //     width: 16,
-                //     height: 9,
-                //   },
                 ],
               },
           ],
