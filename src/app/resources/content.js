@@ -316,6 +316,36 @@ const about = {
                   },
                 ],
               },
+              {
+                title: "Ruby on Rails",
+                description: <></>,
+                images: [
+                  {
+                    src: "/images/projects/creadev/talonario_1.png",
+                    alt: "Screenshots for Talonario",
+                    width: 16,
+                    height: 9,
+                  },
+                  {
+                    src: "/images/projects/rgcali/rgcali_website_coaches.png",
+                    alt: "Website Rails Girls Cali - coaches page",
+                    width: 16,
+                    height: 9,
+                  },
+                ],
+              },
+              {
+                title: "DevOps / Linux SysAdmin / Virtualization",
+                description: <></>,
+                images: [
+                  {
+                    src: "/images/projects/devops/proxmox_grafana.png",
+                    alt: "Screenshots for Proxmox and Grafana dashboard",
+                    width: 16,
+                    height: 9,
+                  },
+                ],
+              },
           ],
     }
 }
