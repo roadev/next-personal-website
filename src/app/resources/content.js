@@ -14,8 +14,8 @@ const person = {
 
 const newsletter = {
     display: false,
-    title: <>Subscribe to {person.firstName}'s Newsletter</>,
-    description: <>I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.</>
+    title: `Subscribe to ${person.firstName}'s Newsletter`,
+    description: `I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.`
 }
 
 const social = [
@@ -46,7 +46,7 @@ const home = {
     label: 'Home',
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Software Engineer and Data Science researcher</>,
+    headline: 'Software Engineer and Data Science researcher',
     subline: 'Juan is a Software Engineer with over 9 years of experience in full-stack development, data science, and cloud computing. He excels in leading technical projects, optimizing software performance, and applying machine learning to real-world agricultural challenges.'
 }
 
@@ -68,7 +68,7 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>Juan is a Software Engineer with over 8 years of experience in full-stack development, data science, and cloud computing. He excels in leading technical projects, optimizing software performance, and applying machine learning to real-world agricultural challenges.</>
+        description: 'Juan is a Software Engineer with over 8 years of experience in full-stack development, data science, and cloud computing. He excels in leading technical projects, optimizing software performance, and applying machine learning to real-world agricultural challenges.'
     },
     work: {
         display: true,
@@ -79,19 +79,29 @@ const about = {
                 timeframe: 'Aug 2024 – Present',
                 role: 'Data Science Project Supervisor',
                 achievements: [
-                    <>Led the "Digital Agronomist" project’s technical development, guiding frontend (React), backend (Node.js), database (MariaDB), and Python ETL implementations.</>,
-                    <>Applied statistical and machine learning methods to improve the accuracy of nutrient predictions (e.g., nitrogen, phosphorus, potassium) and integrated weather data for a holistic view on nutrient management.</>,
-                    <>Refined data cleaning and processing techniques to ensure high-quality datasets for agronomic modeling.</>
+                    'Led the "Digital Agronomist" project\'s technical development, guiding frontend (React), backend (Node.js), database (MariaDB), and Python ETL implementations.',
+                    'Applied statistical and machine learning methods to improve the accuracy of nutrient predictions (e.g., nitrogen, phosphorus, potassium) and integrated weather data for a holistic view on nutrient management.',
+                    'Refined data cleaning and processing techniques to ensure high-quality datasets for agronomic modeling.'
+                ],
+                images: []
+            },
+            {
+                company: 'Ruedata Inc',
+                timeframe: 'April 2025 – Jul 2025',
+                role: 'Sr. Frontend Engineer',
+                achievements: [
+                    'Participated on the system, project design and development of the new Rue Lite Mobile App for Android and iOS using React Native',
+                    'Supported decision making for the Rue Lite Mobile app product.'
                 ],
                 images: []
             },
             {
                 company: 'Soil Net LLC',
                 timeframe: 'May 2024 – Aug 2024',
-                role: 'Research Collaborator (Soil Science and Agronomy)',
+                role: 'Researcher (Soil Science and Agronomy)',
                 achievements: [
-                    <>Conducted research for the "Digital Agronomist" project while awaiting STEM OPT authorization.</>,
-                    <>Mentored interns on data science solutions, covering database design, API integrations, and predictive models for agronomy.</>
+                    'Conducted research for the "Digital Agronomist" project while awaiting STEM OPT authorization.',
+                    'Mentored interns on data science solutions, covering database design, API integrations, and predictive models for agronomy.'
                 ],
                 images: []
             },
@@ -100,8 +110,8 @@ const about = {
                 timeframe: 'Aug 2022 – Aug 2024',
                 role: 'Graduate Assistant',
                 achievements: [
-                    <>Mentored 20+ students in Python programming courses, enhancing their skills in programming projects.</>,
-                    <>Graded and reviewed over 500 labs and assignments, providing constructive feedback to support student learning.</>
+                    'Mentored 20+ students in Python programming courses, enhancing their skills in programming projects.',
+                    'Graded and reviewed over 500 labs and assignments, providing constructive feedback to support student learning.'
                 ],
                 images: []
             },
@@ -110,8 +120,8 @@ const about = {
                 timeframe: 'Nov 2020 – Apr 2022',
                 role: 'Sr. Full Stack Developer',
                 achievements: [
-                    <>Developed a high-performance login widget using the Native Web Components API, compatible with React and Vue projects.</>,
-                    <>Reduced technical debt by 60% with a cross-framework solution, enabling faster deployment and streamlined maintenance.</>
+                    'Developed a high-performance login widget using the Native Web Components API, compatible with React and Vue projects.',
+                    'Reduced technical debt by 60% with a cross-framework solution, enabling faster deployment and streamlined maintenance.'
                 ],
                 images: []
             },
@@ -120,8 +130,8 @@ const about = {
                 timeframe: 'Jun 2019 – Oct 2020',
                 role: 'Sr. Full Stack Engineer',
                 achievements: [
-                    <>Rebuilt a legacy AngularJS UI system with ReactJS & NextJS, improving page load times by 80% and boosting user engagement.</>,
-                    <>Resolved critical bugs in systems using Node.js, PHP, Python, and Elixir, and improved code quality through comprehensive reviews.</>
+                    'Rebuilt a legacy AngularJS UI system with ReactJS & NextJS, improving page load times by 80% and boosting user engagement.',
+                    'Resolved critical bugs in systems using Node.js, PHP, Python, and Elixir, and improved code quality through comprehensive reviews.'
                 ],
                 images: []
             },
@@ -130,9 +140,9 @@ const about = {
                 timeframe: 'Jun 2018 – Jun 2019',
                 role: 'Sr. Full Stack Developer',
                 achievements: [
-                    <>Designed a PostgreSQL database and backend with Ruby on Rails and Node.js, optimizing API integrations and reducing costs.</>,
-                    <>Led three cross-functional teams, ensuring high-quality code and best practices across Ruby, JavaScript, and PHP projects.</>,
-                    <>Automated CI/CD pipelines for AWS, improving deployment reliability and reducing release times.</>
+                    'Designed a PostgreSQL database and backend with Ruby on Rails and Node.js, optimizing API integrations and reducing costs.',
+                    'Led three cross-functional teams, ensuring high-quality code and best practices across Ruby, JavaScript, and PHP projects.',
+                    'Automated CI/CD pipelines for AWS, improving deployment reliability and reducing release times.'
                 ],
                 images: []
             },
@@ -141,8 +151,8 @@ const about = {
                 timeframe: 'Dec 2017 – May 2018',
                 role: 'Full Stack Developer',
                 achievements: [
-                    <>Developed a high-performance e-commerce platform with NextJS and Redux, boosting online sales for La 14 supermarket.</>,
-                    <>Enhanced user experience for Cardash through dynamic UI components using React and GraphQL.</>
+                    'Developed a high-performance e-commerce platform with NextJS and Redux, boosting online sales for La 14 supermarket.',
+                    'Enhanced user experience for Cardash through dynamic UI components using React and GraphQL.'
                 ],
                 images: []
             },
@@ -151,7 +161,7 @@ const about = {
                 timeframe: 'Dec 2017 – Jul 2018',
                 role: 'Teacher of React and React Native Courses',
                 achievements: [
-                    <>Instructed ReactJS courses with a focus on Redux and mobile-first design, mentoring students in modern web development practices.</>
+                    'Instructed ReactJS courses with a focus on Redux and mobile-first design, mentoring students in modern web development practices.'
                 ],
                 images: []
             },
@@ -160,7 +170,7 @@ const about = {
                 timeframe: 'Sep 2016 – Dec 2017',
                 role: 'Frontend Developer',
                 achievements: [
-                    <>Developed and optimized Material Design web components for Pulpo WMS using React, Redux, and ImmutableJS.</>
+                    'Developed and optimized Material Design web components for Pulpo WMS using React, Redux, and ImmutableJS.'
                 ],
                 images: []
             },
@@ -169,9 +179,9 @@ const about = {
                 timeframe: 'Jan 2015 – Sep 2016',
                 role: 'Founder / Frontend Developer',
                 achievements: [
-                    <>Designed and developed web applications for startups, focusing on modern UI/UX principles, responsive design, and performance optimization.</>,
-                    <>Led frontend development using JavaScript, React, and modern web technologies to deliver scalable and maintainable solutions.</>,
-                    <>Collaborated with early-stage businesses to translate ideas into functional MVPs, guiding product development from concept to deployment.</>
+                    'Designed and developed web applications for startups, focusing on modern UI/UX principles, responsive design, and performance optimization.',
+                    'Led frontend development using JavaScript, React, and modern web technologies to deliver scalable and maintainable solutions.',
+                    'Collaborated with early-stage businesses to translate ideas into functional MVPs, guiding product development from concept to deployment.'
                 ],
                 images: []
             }
@@ -183,11 +193,11 @@ const about = {
         institutions: [
             {
                 name: 'University of Wisconsin-Whitewater',
-                description: <>Master's in Computer Science.</>,
+                description: 'Master\'s in Computer Science.',
             },
             {
                 name: 'Universidad Cooperativa de Colombia',
-                description: <>Software Engineering.</>,
+                description: 'Software Engineering.',
             }
         ]
     },
@@ -197,7 +207,7 @@ const about = {
         skills: [
             {
               title: "React",
-              description: <></>,
+              description: '',
               // optional: leave the array empty if you don't want to display images
               images: [
                 {
@@ -228,7 +238,7 @@ const about = {
             },
             {
               title: "Next.js",
-              description: <></>,
+              description: '',
               images: [
                 {
                     src: "/images/projects/soilnet/digital_agronomist_5.png",
@@ -246,7 +256,7 @@ const about = {
             },
             {
                 title: "Python / ETL / Data Engineering",
-                description: <>Python for Machine Learing and Data Science</>,
+                description: 'Python for Machine Learning and Data Science',
                 images: [
                   {
                     src: "/images/projects/soilnet/digital_agronomist_3.png",
@@ -276,7 +286,7 @@ const about = {
               },
               {
                 title: "Typescript & Javascript",
-                description: <>Python for Machine Learing and Data Science</>,
+                description: 'Python for Machine Learning and Data Science',
                 images: [
                   {
                     src: "/images/projects/uruit/bloomberg_login.png",
@@ -294,7 +304,7 @@ const about = {
               },
               {
                 title: "SQL (MariabDB, MySQL, PostgreSQL)",
-                description: <>SQL, Database design, ERD</>,
+                description: 'SQL, Database design, ERD',
                 images: [
                   {
                     src: "/images/projects/UWW/digital_agronomist_erd.png",
@@ -306,7 +316,7 @@ const about = {
               },
               {
                 title: "React Native",
-                description: <></>,
+                description: '',
                 images: [
                   {
                     src: "/images/projects/vigpro/aliciapp.png",
@@ -318,7 +328,7 @@ const about = {
               },
               {
                 title: "Ruby on Rails",
-                description: <></>,
+                description: '',
                 images: [
                   {
                     src: "/images/projects/creadev/talonario_1.png",
@@ -336,7 +346,7 @@ const about = {
               },
               {
                 title: "DevOps / Linux SysAdmin / Virtualization",
-                description: <></>,
+                description: '',
                 images: [
                   {
                     src: "/images/projects/devops/proxmox_grafana.png",
@@ -353,7 +363,7 @@ const about = {
 const blog = {
     label: 'Blog',
     title: 'Writing about design and tech...',
-    description: `Read what ${person.name} has been up to recently`
+    description: `Read what ${person.name} has been up to recently`,
     // Create new blog posts by adding a new .mdx file to app/blog/posts
     // All posts will be listed on the /blog route
 }
@@ -361,7 +371,7 @@ const blog = {
 const work = {
     label: 'Work',
     title: 'My projects',
-    description: `Design and dev projects by ${person.name}`
+    description: `Design and dev projects by ${person.name}`,
     // Create new project pages by adding a new .mdx file to app/blog/posts
     // All projects will be listed on the /home and /work routes
 }
