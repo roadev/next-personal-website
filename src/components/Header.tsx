@@ -10,7 +10,7 @@ import { routes, display } from '@/app/resources'
 
 import { routing } from '@/i18n/routing';
 import { Locale, usePathname, useRouter } from '@/i18n/routing';
-import { renderContent } from "@/app/resources";
+import { createI18nContent } from "@/app/resources";
 import { useTranslations } from "next-intl";
 import { i18n } from "@/app/resources/config";
 
@@ -68,7 +68,7 @@ export const Header = () => {
     }
 
     const t = useTranslations();
-    const { person, home, about, blog, work, gallery } = renderContent(t);
+    const { person, home, about, blog, work, gallery } = createI18nContent(t);
 
     return (
         <Flex style={{height: 'fit-content'}}

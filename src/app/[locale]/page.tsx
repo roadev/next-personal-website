@@ -3,7 +3,7 @@ import React from 'react';
 import { Heading, Flex, Text, Button,  Avatar, RevealFx } from '@/once-ui/components';
 import { Projects } from '@/components/work/Projects';
 
-import { baseURL, routes, renderContent } from '@/app/resources'; 
+import { baseURL, routes, createI18nContent } from '@/app/resources'; 
 import { Mailchimp } from '@/components';
 import { Posts } from '@/components/blog/Posts';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
@@ -13,7 +13,7 @@ export async function generateMetadata(
 	{params: {locale}}: { params: { locale: string }}
 ) {
 	const t = await getTranslations();
-    const { home } = renderContent(t);
+    const { home } = createI18nContent(t);
 	const title = home.title;
 	const description = home.description;
 	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
@@ -47,7 +47,7 @@ export default function Home(
 ) {
 	unstable_setRequestLocale(locale);
 	const t = useTranslations();
-	const { home, about, person, newsletter } = renderContent(t);
+	const { home, about, person, newsletter } = createI18nContent(t);
 	return (
 		<Flex
 			maxWidth="m" fillWidth gap="xl"
