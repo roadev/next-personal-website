@@ -2,15 +2,15 @@ import { InlineCode } from "@/once-ui/components";
 
 const createI18nContent = (t) => {
     const person = {
-        firstName: 'Selene',
-        lastName:  'Yu',
+        firstName: 'Juan',
+        lastName:  'Roa',
         get name() {
             return `${this.firstName} ${this.lastName}`;
         },
         role:      t("person.role"),
         avatar:    '/images/avatar.jpg',
-        location:  'Asia/Jakarta',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-        languages: ['English', 'Bahasa']  // optional: Leave the array empty if you don't want to display languages
+        location:  'America/Bogota',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+        languages: ['English', 'Spanish']  // optional: Leave the array empty if you don't want to display languages
     }
 
     const newsletter = {
@@ -25,22 +25,22 @@ const createI18nContent = (t) => {
         {
             name: 'GitHub',
             icon: 'github',
-            link: 'https://github.com/once-ui-system/nextjs-starter',
+            link: 'https://github.com/roadev',
         },
         {
             name: 'LinkedIn',
             icon: 'linkedin',
-            link: 'https://www.linkedin.com/company/once-ui/',
+            link: 'https://www.linkedin.com/in/roadev/',
         },
         {
             name: 'X',
             icon: 'x',
-            link: '',
+            link: 'https://x.com/jroadev',
         },
         {
             name: 'Email',
             icon: 'email',
-            link: 'mailto:example@gmail.com',
+            link: 'mailto:hello@juanroa.dev',
         },
     ]
 
@@ -65,7 +65,7 @@ const createI18nContent = (t) => {
         },
         calendar: {
             display: true,
-            link: 'https://cal.com'
+            link: 'https://cal.com/jroadev'
         },
         intro: {
             display: true,
@@ -75,78 +75,170 @@ const createI18nContent = (t) => {
         work: {
             display: true, // set to false to hide this section
             title: t("about.work.title"),
-            experiences: [
-                {
-                    company: 'FLY',
-                    timeframe: t("about.work.experiences.FLY.timeframe"),
-                    role: t("about.work.experiences.FLY.role"),
-                    achievements: t("about.work.experiences.FLY.achievements").split(";"),
-                    images: [ // optional: leave the array empty if you don't want to display images
-                        {
-                            src: '/images/projects/project-01/cover-01.jpg',
-                            alt: 'Once UI Project',
-                            width: 16,
-                            height: 9
-                        }
-                    ]
-                },
-                {
-                    company: 'Creativ3',
-                    timeframe: t("about.work.experiences.Creativ3.timeframe"),
-                    role: t("about.work.experiences.Creativ3.role"),
-                    achievements: t("about.work.experiences.Creativ3.achievements").split(";"),
-                    images: [ ]
-                }
-            ]
+            experiences: Object.keys(t.raw('about.work.experiences')).map(company => ({
+                company,
+                timeframe: t(`about.work.experiences.${company}.timeframe`),
+                role: t(`about.work.experiences.${company}.role`),
+                achievements: t(`about.work.experiences.${company}.achievements`).split(";"),
+                images: []
+            }))
         },
         studies: {
             display: true, // set to false to hide this section
-            title: 'Studies',
-            institutions: [
-                {
-                    name: 'University of Jakarta',
-                    description: <>{t(`about.studies.institutions.University of Jakarta.description`)}</>,
-                },
-                {
-                    name: 'Build the Future',
-                    description: <>{t("about.studies.institutions.Build the Future.description")}</>,
-                }
-            ]
+            title: t("about.studies.title"),
+            institutions: Object.keys(t.raw('about.studies.institutions')).map(institution => ({
+                name: institution,
+                description: <>{t(`about.studies.institutions.${institution}.description`)}</>,
+            }))
         },
         technical: {
             display: true, // set to false to hide this section
             title: t("about.technical.title"),
             skills: [
                 {
-                    title: 'Figma',
-                    description: <>{t("about.technical.skills.Figma.description")}</>,
+                    title: "React",
+                    description: "",
                     images: [
                         {
-                            src: '/images/projects/project-01/cover-02.jpg',
-                            alt: 'Project image',
+                            src: "/images/projects/soilnet/digital_agronomist_1.png",
+                            alt: "Digital Agronomist Dashboard 1",
                             width: 16,
-                            height: 9
+                            height: 9,
                         },
                         {
-                            src: '/images/projects/project-01/cover-03.jpg',
-                            alt: 'Project image',
+                            src: "/images/projects/bunnystudio/home.png",
+                            alt: "Project image",
                             width: 16,
-                            height: 9
+                            height: 9,
                         },
-                    ]
+                        {
+                            src: "/images/projects/UWW/neonatology_1.png",
+                            alt: "Neonatology Outcomes",
+                            width: 16,
+                            height: 9,
+                        },
+                        {
+                            src: "/images/projects/pulpo/pulpo_landing.png",
+                            alt: "Pulpo WMS landing page",
+                            width: 16,
+                            height: 9,
+                        },
+                    ],
                 },
                 {
-                    title: 'Next.js',
-                    description: <>{t("about.technical.skills.Nextjs.description")}</>, // "." not accepted in next-intl namespace
+                    title: "Next.js",
+                    description: "",
                     images: [
                         {
-                            src: '/images/projects/project-01/cover-04.jpg',
-                            alt: 'Project image',
+                            src: "/images/projects/soilnet/digital_agronomist_5.png",
+                            alt: "Digital Agronomist landing",
                             width: 16,
-                            height: 9
+                            height: 9,
                         },
-                    ]
-                }
+                        {
+                            src: "/images/projects/bunnystudio/DRI_React_Components.png",
+                            alt: "Project image",
+                            width: 16,
+                            height: 9,
+                        },
+                    ],
+                },
+                {
+                    title: "Python / ETL / Data Engineering",
+                    description: "Python for Machine Learning and Data Science",
+                    images: [
+                        {
+                            src: "/images/projects/soilnet/digital_agronomist_3.png",
+                            alt: "Data Science for Agronomy",
+                            width: 16,
+                            height: 9,
+                        },
+                        {
+                            src: "/images/projects/UWW/digital_agronomist_approach.png",
+                            alt: "Digital Agronomist ETL approach",
+                            width: 16,
+                            height: 9,
+                        },
+                        {
+                            src: "/images/projects/soilnet/digital_agronomist_4.png",
+                            alt: "Machine Learning for Agronomy",
+                            width: 16,
+                            height: 9,
+                        },
+                        {
+                            src: "/images/projects/soilnet/digital_agronomist_6.png",
+                            alt: "Ada Boost evaluation",
+                            width: 16,
+                            height: 9,
+                        },
+                    ],
+                },
+                {
+                    title: "Typescript & Javascript",
+                    description: "Python for Machine Learning and Data Science",
+                    images: [
+                        {
+                            src: "/images/projects/uruit/bloomberg_login.png",
+                            alt: "Data Science for Agronomy",
+                            width: 16,
+                            height: 9,
+                        },
+                    ],
+                },
+                {
+                    title: "SQL (MariabDB, MySQL, PostgreSQL)",
+                    description: "SQL, Database design, ERD",
+                    images: [
+                        {
+                            src: "/images/projects/UWW/digital_agronomist_erd.png",
+                            alt: "Data Science for Agronomy",
+                            width: 16,
+                            height: 9,
+                        },
+                    ],
+                },
+                {
+                    title: "React Native",
+                    description: "",
+                    images: [
+                        {
+                            src: "/images/projects/vigpro/aliciapp.png",
+                            alt: "Screenshots for Aliciapp",
+                            width: 16,
+                            height: 9,
+                        },
+                    ],
+                },
+                {
+                    title: "Ruby on Rails",
+                    description: "",
+                    images: [
+                        {
+                            src: "/images/projects/creadev/talonario_1.png",
+                            alt: "Screenshots for Talonario",
+                            width: 16,
+                            height: 9,
+                        },
+                        {
+                            src: "/images/projects/rgcali/rgcali_website_coaches.png",
+                            alt: "Website Rails Girls Cali - coaches page",
+                            width: 16,
+                            height: 9,
+                        },
+                    ],
+                },
+                {
+                    title: "DevOps / Linux SysAdmin / Virtualization",
+                    description: "",
+                    images: [
+                        {
+                            src: "/images/projects/devops/proxmox_grafana.png",
+                            alt: "Screenshots for Proxmox and Grafana dashboard",
+                            width: 16,
+                            height: 9,
+                        },
+                    ],
+                },
             ]
         }
     }
@@ -239,7 +331,7 @@ const createI18nContent = (t) => {
                 orientation: 'horizontal'
             },
             { 
-                src: '/images/gallery/img-14.jpg',
+                src: '/images/gallery/img-14.jpg', 
                 alt: 'image',
                 orientation: 'horizontal'
             },
