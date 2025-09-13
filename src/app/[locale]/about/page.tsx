@@ -1,5 +1,5 @@
 import { Avatar, Button, Flex, Heading, Icon, IconButton, SmartImage, Tag, Text } from '@/once-ui/components';
-import { createI18nContent, baseURL } from '@/app/resources';
+import { renderContent, baseURL } from '@/app/resources';
 import TableOfContents from '@/components/about/TableOfContents';
 import styles from '@/components/about/about.module.scss'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
@@ -9,7 +9,7 @@ export async function generateMetadata(
     {params: {locale}}: { params: { locale: string }}
 ) {
     const t = await getTranslations();
-    const {person, about, social } = createI18nContent(t);
+    const {person, about, social } = renderContent(t);
 	const title = about.title;
 	const description = about.description;
 	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
@@ -43,7 +43,7 @@ export default function About(
 ) {
     unstable_setRequestLocale(locale);
     const t = useTranslations();
-    const {person, about, social } = createI18nContent(t);
+    const {person, about, social } = renderContent(t);
     const structure = [
         { 
             title: about.intro.title,
@@ -265,7 +265,7 @@ export default function About(
                                             <Flex
                                                 fillWidth paddingTop="m" paddingLeft="40"
                                                 wrap>
-                                                {experience.images.map((image, index) => (
+                                                {experience.images.map((image: { src: string; alt: string; width: number; height: number; }, index: number) => (
                                                     <Flex
                                                         key={index}
                                                         border="neutral-medium"
@@ -350,7 +350,7 @@ export default function About(
                                             <Flex
                                                 fillWidth paddingTop="m" gap="12"
                                                 wrap>
-                                                {skill.images.map((image, index) => (
+                                                {skill.images.map((image: { src: string; alt: string; width: number; height: number; }, index: number) => (
                                                     <Flex
                                                         key={index}
                                                         border="neutral-medium"
