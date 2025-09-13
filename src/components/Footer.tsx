@@ -1,4 +1,4 @@
-import { createI18nContent } from "@/app/resources";
+import { renderContent } from "@/app/resources";
 import { Flex, IconButton, SmartLink, Text } from "@/once-ui/components"
 import { useTranslations } from "next-intl";
 // import { person, social } from '@/app/resources'
@@ -7,7 +7,7 @@ export const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     const t = useTranslations();
-    const { person, social } = createI18nContent(t);
+    const { person, social } = renderContent(t);
 
     return (
         <Flex

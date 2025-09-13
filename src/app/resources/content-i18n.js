@@ -1,6 +1,6 @@
 import { InlineCode } from "@/once-ui/components";
 
-const createI18nContent = (t) => {
+const renderContent = (t) => {
     const person = {
         firstName: 'Juan',
         lastName:  'Roa',
@@ -349,4 +349,4 @@ const createI18nContent = (t) => {
     }
 };
 
-export { createI18nContent };
+export { renderContent };

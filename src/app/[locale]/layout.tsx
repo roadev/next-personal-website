@@ -15,14 +15,14 @@ import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-in
 
 import { Metadata } from "next";
 import { routing } from "@/i18n/routing";
-import { createI18nContent } from "@/app/resources";
+import { renderContent } from "@/app/resources";
 
 export async function generateMetadata(
 	{ params: { locale }}: { params: { locale: string }}
 ) {
 
 	const t = await getTranslations();
-	const { person, home } = createI18nContent(t);
+	const { person, home } = renderContent(t);
 
 	return {
 		metadataBase: new URL(`https://${baseURL}/${locale}`),
