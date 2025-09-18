@@ -26,56 +26,67 @@
             "title": "Work Experience",
             "experiences": {
                 "SoilNetLLC": {
+                    "name": "SoilNet LLC",
                     "timeframe": "Aug 2024 – Present",
                     "role": "Data Science Project Supervisor",
                     "achievements": "Led the \"Digital Agronomist\" project's technical development, guiding frontend (React), backend (Node.js), database (MariaDB), and Python ETL implementations.;Applied statistical and machine learning methods to improve the accuracy of nutrient predictions (e.g., nitrogen, phosphorus, potassium) and integrated weather data for a holistic view on nutrient management.;Refined data cleaning and processing techniques to ensure high-quality datasets for agronomic modeling."
                 },
                 "RuedataInc": {
+                    "name": "Ruedata Inc",
                     "timeframe": "April 2025 – Jul 2025",
                     "role": "Sr. Frontend Engineer",
                     "achievements": "Participated on the system, project design and development of the new Rue Lite Mobile App for Android and iOS using React Native;Supported decision making for the Rue Lite Mobile app product."
                 },
                 "SoilNetLLCResearcher": {
+                    "name": "SoilNet LLC (Researcher)",
                     "timeframe": "May 2024 – Aug 2024",
                     "role": "Researcher (Soil Science and Agronomy)",
                     "achievements": "Conducted research for the \"Digital Agronomist\" project while awaiting STEM OPT authorization.;Mentored interns on data science solutions, covering database design, API integrations, and predictive models for agronomy."
                 },
                 "UniversityOfWisconsinWhitewater": {
+                    "name": "University of Wisconsin-Whitewater",
                     "timeframe": "Aug 2022 – Aug 2024",
                     "role": "Graduate Assistant",
                     "achievements": "Mentored 20+ students in Python programming courses, enhancing their skills in programming projects.;Graded and reviewed over 500 labs and assignments, providing constructive feedback to support student learning."
                 },
                 "UruIT": {
+                    "name": "UruIT",
                     "timeframe": "Nov 2020 – Apr 2022",
                     "role": "Sr. Full Stack Developer",
                     "achievements": "Developed a high-performance login widget using the Native Web Components API, compatible with React and Vue projects.;Reduced technical debt by 60% with a cross-framework solution, enabling faster deployment and streamlined maintenance."
                 },
                 "BunnyStudio": {
+                    "name": "BunnyStudio",
                     "timeframe": "Jun 2019 – Oct 2020",
                     "role": "Sr. Full Stack Engineer",
                     "achievements": "Rebuilt a legacy AngularJS UI system with ReactJS & NextJS, improving page load times by 80% and boosting user engagement.;Resolved critical bugs in systems using Node.js, PHP, Python, and Elixir, and improved code quality through comprehensive reviews."
                 },
                 "VIGPROSAS": {
+                    "name": "VIGPRO S.A.S",
                     "timeframe": "Jun 2018 – Jun 2019",
                     "role": "Sr. Full Stack Developer",
                     "achievements": "Designed a PostgreSQL database and backend with Ruby on Rails and Node.js, optimizing API integrations and reducing costs.;Led three cross-functional teams, ensuring high-quality code and best practices across Ruby, JavaScript, and PHP projects.;Automated CI/CD pipelines for AWS, improving deployment reliability and reducing release times."
                 },
                 "ImaginamosDigitalAgency": {
+                    "name": "Imaginamos Digital Agency",
                     "timeframe": "Dec 2017 – May 2018",
                     "role": "Full Stack Developer",
                     "achievements": "Developed a high-performance e-commerce platform with NextJS and Redux, boosting online sales for La 14 supermarket.;Enhanced user experience for Cardash through dynamic UI components using React and GraphQL."
                 },
                 "Devhack": {
+                    "name": "Devhack",
                     "timeframe": "Dec 2017 – Jul 2018",
                     "role": "Teacher of React and React Native Courses",
                     "achievements": "Instructed ReactJS courses with a focus on Redux and mobile-first design, mentoring students in modern web development practices."
                 },
                 "PulpoWMS": {
+                    "name": "PulpoWMS",
                     "timeframe": "Sep 2016 – Dec 2017",
                     "role": "Frontend Developer",
                     "achievements": "Developed and optimized Material Design web components for Pulpo WMS using React, Redux, and ImmutableJS."
                 },
                 "Creadev": {
+                    "name": "Creadev",
                     "timeframe": "Jan 2015 – Sep 2016",
                     "role": "Founder / Frontend Developer",
                     "achievements": "Designed and developed web applications for startups, focusing on modern UI/UX principles, responsive design, and performance optimization.;Led frontend development using JavaScript, React, and modern web technologies to deliver scalable and maintainable solutions.;Collaborated with early-stage businesses to translate ideas into functional MVPs, guiding product development from concept to deployment."
@@ -86,9 +97,11 @@
             "title": "Studies",
             "institutions": {
                 "UniversityOfWisconsinWhitewater": {
+                    "name": "University of Wisconsin-Whitewater",
                     "description": "Master's in Computer Science."
                 },
                 "UniversidadCooperativaDeColombia": {
+                    "name": "Universidad Cooperativa de Colombia",
                     "description": "Software Engineering."
                 }
             }
@@ -111,6 +124,11 @@
         "label": "Gallery",
         "title": "My photo gallery",
         "description": "A photo collection by {name}"
+    },
+    "showcase": {
+        "label": "Showcase",
+        "title": "My showcase",
+        "description": "A showcase of projects by {name}"
     },
     "projectCard": {
         "label": "Read Case Study"

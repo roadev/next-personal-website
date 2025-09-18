@@ -77,6 +77,7 @@ const renderContent = (t) => {
             title: t("about.work.title"),
             experiences: Object.keys(t.raw('about.work.experiences')).map(company => ({
                 company,
+                name: t(`about.work.experiences.${company}.name`),
                 timeframe: t(`about.work.experiences.${company}.timeframe`),
                 role: t(`about.work.experiences.${company}.role`),
                 achievements: t(`about.work.experiences.${company}.achievements`).split(";"),
@@ -87,7 +88,8 @@ const renderContent = (t) => {
             display: true, // set to false to hide this section
             title: t("about.studies.title"),
             institutions: Object.keys(t.raw('about.studies.institutions')).map(institution => ({
-                name: institution,
+                key: institution,
+                name: t(`about.studies.institutions.${institution}.name`),
                 description: <>{t(`about.studies.institutions.${institution}.description`)}</>,
             }))
         },
@@ -174,8 +176,8 @@ const renderContent = (t) => {
                     ],
                 },
                 {
-                    title: "Typescript & Javascript",
-                    description: "Python for Machine Learning and Data Science",
+                    title: "Typescript & Javascript | Web Components API",
+                    description: "",
                     images: [
                         {
                             src: "/images/projects/uruit/bloomberg_login.png",
@@ -201,6 +203,18 @@ const renderContent = (t) => {
                     title: "React Native",
                     description: "",
                     images: [
+                        {
+                            src: "/images/projects/ruedata/ruedata-lite.jpg",
+                            alt: "Screenshots for Ruedata Inspections",
+                            width: 16,
+                            height: 9,
+                        },
+                        {
+                            src: "/images/projects/rodarlibre/rodarlibre.png",
+                            alt: "Screenshots for Ruedata Inspections",
+                            width: 16,
+                            height: 9,
+                        },
                         {
                             src: "/images/projects/vigpro/aliciapp.png",
                             alt: "Screenshots for Aliciapp",
@@ -275,12 +289,12 @@ const renderContent = (t) => {
                 alt: 'image',
                 orientation: 'horizontal'
             },
-            { 
+            {
                 src: '/images/gallery/img-03.jpg',
                 alt: 'image',
                 orientation: 'vertical'
             },
-            { 
+            {
                 src: '/images/gallery/img-04.jpg',
                 alt: 'image',
                 orientation: 'horizontal'
@@ -315,7 +329,7 @@ const renderContent = (t) => {
                 alt: 'image',
                 orientation: 'horizontal'
             },
-            { 
+            {
                 src: '/images/gallery/img-11.jpg',
                 alt: 'image',
                 orientation: 'vertical'
@@ -330,12 +344,18 @@ const renderContent = (t) => {
                 alt: 'image',
                 orientation: 'horizontal'
             },
-            { 
-                src: '/images/gallery/img-14.jpg', 
+            {
+                src: '/images/gallery/img-14.jpg',
                 alt: 'image',
                 orientation: 'horizontal'
             },
         ]
+    }
+
+    const showcase = {
+        label: t("showcase.label"),
+        title: t("showcase.title"),
+        description: t("showcase.description", {name: person.name})
     }
     return {
         person,
@@ -345,7 +365,8 @@ const renderContent = (t) => {
         about,
         blog,
         work,
-        gallery
+        gallery,
+        showcase
     }
 };
 

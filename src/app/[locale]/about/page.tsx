@@ -53,7 +53,7 @@ export default function About(
         { 
             title: about.work.title,
             display: about.work.display,
-            items: about.work.experiences.map(experience => experience.company)
+            items: about.work.experiences.map(experience => experience.name)
         },
         { 
             title: about.studies.title,
@@ -87,7 +87,7 @@ export default function About(
                             .map((item) => item.link),
                         worksFor: {
                             '@type': 'Organization',
-                            name: about.work.experiences[0].company || ''
+                            name: about.work.experiences[0].name || ''
                         },
                     }),
                 }}
@@ -235,7 +235,7 @@ export default function About(
                                             <Text
                                                 id={experience.company}
                                                 variant="heading-strong-l">
-                                                {experience.company}
+                                                {experience.name}
                                             </Text>
                                             <Text
                                                 variant="heading-default-xs"
@@ -302,11 +302,11 @@ export default function About(
                                 fillWidth gap="l" marginBottom="40">
                                 {about.studies.institutions.map((institution, index) => (
                                     <Flex
-                                        key={`${institution.name}-${index}`}
+                                        key={`${institution.key}-${index}`}
                                         fillWidth gap="4"
                                         direction="column">
                                         <Text
-                                            id={institution.name}
+                                            id={institution.key}
                                             variant="heading-strong-l">
                                             {institution.name}
                                         </Text>

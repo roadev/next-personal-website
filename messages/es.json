@@ -26,51 +26,61 @@
             "title": "Experiencia Laboral",
             "experiences": {
                 "SoilNetLLC": {
+                    "name": "SoilNet LLC",
                     "timeframe": "Ago 2024 – Actualidad",
                     "role": "Data Science Project Supervisor (Investigación)",
                     "achievements": "Dirigí el desarrollo técnico del proyecto \"El Agrónomo Digital\", dando mentoría y gerenciando el proyecto usando metodologías ágiles a estudiantes de UW-Whitewater en Wisconsin, USA con proyectos de Frontend (React), backend API (Node.js), bases de datos (MySQL/MariaDB) e implementaciones de Python ETL, enfocándose en integración robusta de datos y optimización de modelos.;Apliqué métodos de Estadística Multivariante avanzada y Machine Learning para mejorar los datasets de suelos y cultivos, incrementando considerablemente la precisión en la predicción de nutrientes clave como Nitrógeno, Fósforo y Potasio.;Conduje actualizaciones y mejoras en la limpieza de los datos, imputación y técnicas de procesamiento de datos para asegurar la alta calidad y sostenibilidad de los datasets para modelamiento agronómico."
                 },
                 "RuedataInc": {
+                    "name": "Ruedata Inc",
                     "timeframe": "Abr 2025 – Jul 2025",
                     "role": "Senior Frontend Engineer",
                     "achievements": "Participé en diseño, desarrollo, implementación y despliegue de Ruedata Lite Mobile App para Android, iOS."
                 },
                 "SoilNetLLCResearcher": {
+                    "name": "SoilNet LLC (Investigador)",
                     "timeframe": "May 2024 – Ago 2024",
                     "role": "Investigador",
-                    "achievements": "Conduje actividades de investigación para \"El Agronómo Digital\" mientras esperaba la autorización de empleamiento post-graduación de mi maestría.;Di clases magistrales y mentorías a estudiantes y practicantes de la University of Wisconsin-Whitewater para la implementación de soluciones en Data Science, con enfoque en diseño de bases de datos, integraciones de API REST y modelos predictivos de Machine Learning para Agronomía."
+                    "achievements": "Conduje actividades de investigación para \"El Agrónomo Digital\" mientras esperaba la autorización de empleamiento post-graduación de mi maestría.;Di clases magistrales y mentorías a estudiantes y practicantes de la University of Wisconsin-Whitewater para la implementación de soluciones en Data Science, con enfoque en diseño de bases de datos, integraciones de API REST y modelos predictivos de Machine Learning para Agronomía."
                 },
                 "UniversityOfWisconsinITSCMDepartment": {
+                    "name": "University of Wisconsin-Whitewater",
                     "timeframe": "Ago 2022 – Ago 2024",
                     "role": "Asistente de Posgrado",
                     "achievements": "Realicé mentorías a más de 20 estudiantes en dos cursos de programación con Python por semestre durante 2 años para el departamento de tecnología y cyberseguridad de la universidad.;Califiqué y revisé más de 500 laboratorios de programación, tareas y trabajos de clase. Di retroalimentación constructiva sobre cada uno de ellos para contribuir al aprendizaje y mejora de los estudiantes."
                 },
                 "UruIT": {
+                    "name": "UruIT",
                     "timeframe": "Nov 2020 – Abr 2022",
                     "role": "Sr. Full Stack Developer",
                     "achievements": "Desarrollé un login widget de alto rendimiento utilizando los Web Components API, integrándolo paralelamente en proyectos o microfrontends en React, Vue, Angular y otros para estandarizar la autenticación de usuarios.;Reduje la deuda técnica en un 60% al crear una solución framework multiplataforma que eliminó el código redundante en micro-frontends, permitiendo un despliegue y mantenimiento más ágil para nuevos proyectos."
                 },
                 "BunnyStudio": {
+                    "name": "Bunny Studio",
                     "timeframe": "Jun 2019 – Oct 2020",
                     "role": "Sr. Full Stack Engineer",
                     "achievements": "Reconstruí y optimicé el frontend legacy en AngularJS desarrollando una nueva plataforma con ReactJS y NextJS, reduciendo así los tiempos de carga de la página en un 80% por medio de server side rendering para finalmente mejorar significativamente la conversión y retención de usuarios.;Realicé mejoras de los micro-servicios y toda su infraestructura así como resolviendo bugs críticos en sistemas corriendo en docker en Node.js, PHP, Python y Elixir. También me aseguré de la calidad del código por medio de code reviews y aprobaciones de pull requests."
                 },
                 "VIGPROSAS": {
+                    "name": "VIGPRO S.A.S",
                     "timeframe": "Jun 2018 – Jun 2019",
                     "role": "Sr. Full Stack Developer",
                     "achievements": "Diseñé e implementé una base de datos en PostgreSQL y una arquitectura de backend en Ruby on Rails y Node.js, optimizando integraciones de API de terceros para proyectos internos de optimización de tarifas para procedimientos quirúrgicos para el sector salud, el cual reducía considerablemente los costos operacionales.;Lideré 3 equipos full-stack realizando revisiones de código y aprobando pull request para código en lenguajes como: Ruby, Javascript y PHP, asegurando la calidad del código y mejores prácticas.;Automaticé los CI/CD pipelines para despliegues en AWS usando Docker y Jenkins, reduciendo así tiempos de despliegue y automatizando la mejora de estabilidad del sistema.;Estuve a cargo del lanzamiento y despliegue de la primera app de VIGPRO para iOS y Android, mejorando la experiencia de usuario y expandiendo el market reach."
                 },
                 "ImaginamosDigitalAgency": {
+                    "name": "Imaginamos Digital Agency",
                     "timeframe": "Dic 2017 – May 2018",
                     "role": "Full Stack Developer",
                     "achievements": "Lideré el desarrollo de una plataforma de e-commerce de alto rendimiento hecha en NextJS y Redux el cual permitió un aumento significativo de las ventas en el centro comercial La 14.;Desarrollé e implementé componentes dinámicos para la startup Cardash de San Francisco, CA, mejorando la experiencia de usuario e integraciones por medio de React y GraphQL."
                 },
                 "Devhack": {
+                    "name": "Devhack",
                     "timeframe": "Dic 2017 – Jul 2018",
                     "role": "Profesor de cursos de React y React Native",
                     "achievements": "Instruí los cursos de ReactJS enfocados en manejo complejo de estado con Redux y principios de mobile first. Dí mentorías a estudiantes en buenas y modernas prácticas de desarrollo web."
                 },
                 "PulpoWMS": {
+                    "name": "PulpoWMS",
                     "timeframe": "Sep 2016 – Dic 2017",
                     "role": "Frontend Developer",
                     "achievements": "Desarrollé y optimicé web components diseñados en Material Design con React Toolbox para la plataforma Pulpo WMS usando React, Redux e ImmutableJS, mejorando la experiencia de usuario y la eficiencia general de la plataforma."
@@ -81,9 +91,11 @@
             "title": "Educación",
             "institutions": {
                 "UniversityOfWisconsinWhitewater": {
+                    "name": "University of Wisconsin-Whitewater",
                     "description": "Máster en Computer Science."
                 },
                 "UniversidadCooperativaDeColombia": {
+                    "name": "Universidad Cooperativa de Colombia",
                     "description": "Pregrado en Ingeniería de Sistemas."
                 }
             }
@@ -106,6 +118,11 @@
         "label": "Galería",
         "title": "Mi galería de fotos",
         "description": "Una colección de fotos por {name}"
+    },
+    "showcase": {
+        "label": "Portafolio",
+        "title": "Mi portafolio",
+        "description": "Un portafolio de proyectos por {name}"
     },
     "projectCard": {
         "label": "Leer caso de estudio"
