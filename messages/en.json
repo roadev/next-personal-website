@@ -114,6 +114,26 @@
         },
         "technical": {
             "title": "Technical skills"
+        },
+        "projects": {
+            "title": "Projects",
+            "items": {
+                "rodarlibre": {
+                    "name": "Rodar Libre",
+                    "description": "RodarLibre is the first app for drivers in Colombia. It helps users manage their vehicle's documentation, maintenance, and expenses in one place. Future impact includes smart proactive maintenance reminders and community-driven riding clubs.",
+                    "link": "https://play.google.com/store/apps/details?id=com.rodarlibre",
+                    "stats": [
+                        { "label": "Installs", "value": "500+" },
+                        { "label": "Rating", "value": "5.0 ⭐" },
+                        { "label": "Ads", "value": "Ad-free" }
+                    ],
+                    "images": [
+                        { "src": "/images/projects/rodarlibre/screenshot_1.png", "alt": "Rodar Libre Login", "width": 9, "height": 16 },
+                        { "src": "/images/projects/rodarlibre/screenshot_2.png", "alt": "Rodar Libre Dashboard", "width": 9, "height": 16 },
+                        { "src": "/images/projects/rodarlibre/screenshot_3.png", "alt": "Rodar Libre Options", "width": 9, "height": 16 }
+                    ]
+                }
+            }
         }
     },
     "blog": {

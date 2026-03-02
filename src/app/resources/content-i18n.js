@@ -64,7 +64,7 @@ const renderContent = (t) => {
             display: true
         },
         calendar: {
-            display: true,
+            display: false,
             link: 'https://cal.com/jroadev'
         },
         intro: {
@@ -81,6 +81,7 @@ const renderContent = (t) => {
                 timeframe: t(`about.work.experiences.${company}.timeframe`),
                 role: t(`about.work.experiences.${company}.role`),
                 achievements: t(`about.work.experiences.${company}.achievements`).split(";"),
+                link: t(`about.work.experiences.${company}.link`),
                 images: []
             }))
         },
@@ -211,7 +212,7 @@ const renderContent = (t) => {
                         },
                         {
                             src: "/images/projects/rodarlibre/rodarlibre.png",
-                            alt: "Screenshots for Ruedata Inspections",
+                            alt: "Rodar Libre App",
                             width: 16,
                             height: 9,
                         },
@@ -254,6 +255,18 @@ const renderContent = (t) => {
                     ],
                 },
             ]
+        },
+        projects: {
+            display: true,
+            title: t("about.projects.title"),
+            items: Object.keys(t.raw('about.projects.items')).map(project => ({
+                key: project,
+                name: t(`about.projects.items.${project}.name`),
+                description: t(`about.projects.items.${project}.description`),
+                link: t(`about.projects.items.${project}.link`),
+                stats: t.raw(`about.projects.items.${project}.stats`),
+                images: t.raw(`about.projects.items.${project}.images`)
+            }))
         }
     }
 

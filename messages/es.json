@@ -102,6 +102,26 @@
         },
         "technical": {
             "title": "Habilidades técnicas"
+        },
+        "projects": {
+            "title": "Proyectos",
+            "items": {
+                "rodarlibre": {
+                    "name": "Rodar Libre",
+                    "description": "RodarLibre es la primera aplicación para conductores en Colombia. Ayuda a los usuarios a gestionar la documentación, el mantenimiento y los gastos de su vehículo en un solo lugar. El impacto futuro incluye recordatorios inteligentes de mantenimiento proactivo y clubes de conductores impulsados por la comunidad.",
+                    "link": "https://play.google.com/store/apps/details?id=com.rodarlibre",
+                    "stats": [
+                        { "label": "Descargas", "value": "500+" },
+                        { "label": "Calificación", "value": "5.0 ⭐" },
+                        { "label": "Anuncios", "value": "Sin anuncios" }
+                    ],
+                    "images": [
+                        { "src": "/images/projects/rodarlibre/screenshot_1.png", "alt": "Rodar Libre Login", "width": 9, "height": 16 },
+                        { "src": "/images/projects/rodarlibre/screenshot_2.png", "alt": "Rodar Libre Dashboard", "width": 9, "height": 16 },
+                        { "src": "/images/projects/rodarlibre/screenshot_3.png", "alt": "Rodar Libre Options", "width": 9, "height": 16 }
+                    ]
+                }
+            }
         }
     },
     "blog": {
