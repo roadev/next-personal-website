@@ -9,6 +9,7 @@ import { baseURL, effects, style } from '@/app/resources'
 
 import { Inter } from 'next/font/google'
 import { Source_Code_Pro } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
@@ -132,6 +133,7 @@ export default async function RootLayout({
 						</Flex>
 					</Flex>
 					<Footer/>
+					<Analytics />
 				</Flex>
 			</Flex>
 		</NextIntlClientProvider>
