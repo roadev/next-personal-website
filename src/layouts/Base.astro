@@ -2,18 +2,48 @@
 import '@fontsource-variable/inter';
 import '../styles/global.css';
 
+import Analytics from '@vercel/analytics/astro';
+import { getImage } from 'astro:assets';
+import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import type { Locale } from '../data/profile';
-import { ui } from '../i18n/ui';
+import { education, experience, locales, person, social, type Locale } from '../data/profile';
+import { homePath, ogLocale, ui } from '../i18n/ui';
 
 interface Props {
 	locale: Locale;
 	title: string;
 	description: string;
+	/** Pages without a stable URL (the 404) are not indexed and get no canonical or hreflang. */
+	noindex?: boolean;
 }
 
-const { locale, title, description } = Astro.props;
+const { locale, title, description, noindex = false } = Astro.props;
+const site = Astro.site!;
+const canonical = new URL(homePath[locale], site).href;
+const ogImage = new URL(`/og-${locale}.jpg`, site).href;
+const avatar = await getImage({ src: person.avatar, width: 512, format: 'jpg' });
+
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: person.name,
+	givenName: person.firstName,
+	familyName: person.lastName,
+	jobTitle: person.role[locale],
+	description,
+	url: canonical,
+	image: new URL(avatar.src, site).href,
+	email: `mailto:${person.email}`,
+	sameAs: social.filter((link) => link.id !== 'email').map((link) => link.url),
+	worksFor: experience
+		.filter((item) => item.end === null)
+		.map((item) => ({ '@type': 'Organization', name: item.company })),
+	alumniOf: education.map((entry) => ({ '@type': 'CollegeOrUniversity', name: entry.institution })),
+	address: { '@type': 'PostalAddress', addressLocality: 'Bogotá', addressCountry: 'CO' },
+	knowsLanguage: ['en', 'es'],
+};
 ---
 
 <!doctype html>
@@ -23,6 +53,54 @@ const { locale, title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<meta name="author" content={person.name} />
+		<meta name="theme-color" content="#0a0a0a" />
+		<link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
+
+		{noindex && <meta name="robots" content="noindex" />}
+		{
+			!noindex && (
+				<>
+					<link rel="canonical" href={canonical} />
+					{locales.map((code) => (
+						<link rel="alternate" hreflang={code} href={new URL(homePath[code], site).href} />
+					))}
+					<link rel="alternate" hreflang="x-default" href={new URL(homePath.en, site).href} />
+				</>
+			)
+		}
+
+		<meta property="og:type" content="profile" />
+		<meta property="og:site_name" content={person.name} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={`${person.name} · ${person.role[locale]}`} />
+		<meta property="og:locale" content={ogLocale[locale]} />
+		{
+			locales
+				.filter((code) => code !== locale)
+				.map((code) => <meta property="og:locale:alternate" content={ogLocale[code]} />)
+		}
+		<meta property="profile:first_name" content={person.firstName} />
+		<meta property="profile:last_name" content={person.lastName} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@jroadev" />
+		<meta name="twitter:creator" content="@jroadev" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<link rel="icon" href="/favicon.ico" sizes="32x32" />
+		<link rel="icon" href="/images/favicon/favicon-192x192.jpg" type="image/jpeg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/manifest.webmanifest" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		{!noindex && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 	</head>
 	<body>
 		<a class="skip-link" href="#main">{ui.skipToContent[locale]}</a>
@@ -31,5 +109,6 @@ const { locale, title, description } = Astro.props;
 			<slot />
 		</main>
 		<Footer locale={locale} />
+		<Analytics />
 	</body>
 </html>

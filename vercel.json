@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "astro",
+  "outputDirectory": "dist",
+  "redirects": [
+    { "source": "/about", "destination": "/#experience", "statusCode": 301 },
+    { "source": "/es/about", "destination": "/es/#experience", "statusCode": 301 },
+    { "source": "/en", "destination": "/", "statusCode": 301 },
+    { "source": "/en/about", "destination": "/#experience", "statusCode": 301 },
+    { "source": "/sitemap.xml", "destination": "/sitemap-index.xml", "statusCode": 301 }
+  ]
+}
