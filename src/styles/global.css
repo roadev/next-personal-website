@@ -1,0 +1,201 @@
+/* Tokens taken from the Once UI dark theme the site used before (gray / aqua / yellow). */
+:root {
+	color-scheme: dark;
+
+	--bg: #0a0a0a;
+	--text: #ffffff;
+	--text-weak: #d2d2d2;
+	--text-muted: #a8a8a8;
+	--border: #3f3f3f;
+	--border-weak: #262626;
+	--surface: rgb(0 0 0 / 0.3);
+	--surface-raised: rgb(255 255 255 / 0.04);
+	--surface-hover: rgb(255 255 255 / 0.08);
+	--brand: #4de9dc;
+	--brand-strong: #78f6e4;
+	--brand-bg: rgb(77 233 220 / 0.1);
+	--accent: #fecc55;
+	--glow-warm: #924205;
+	--glow-cool: #081719;
+
+	--font-sans: 'Inter Variable', Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+	--radius: 0.75rem;
+	--radius-pill: 999px;
+	--content: 46rem;
+	--gutter: 1rem;
+	--header-h: 4rem;
+}
+
+@media (min-width: 640px) {
+	:root {
+		--gutter: 1.5rem;
+	}
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+}
+
+html {
+	background-color: var(--bg);
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+body {
+	min-height: 100vh;
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	font-family: var(--font-sans);
+	font-size: 1rem;
+	line-height: 1.6;
+	color: var(--text-weak);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: clip;
+}
+
+img,
+svg,
+picture {
+	display: block;
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+li {
+	overflow-wrap: break-word;
+}
+
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+	padding: 0;
+}
+
+/* Background: the old Once UI gradient + dot grid, as fixed layers behind the page. */
+body::before,
+body::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+}
+
+body::before {
+	background:
+		radial-gradient(100% 100% at 49.99% 0%, transparent 0%, var(--bg) 100%),
+		radial-gradient(87.4% 84.04% at 6.82% 16.24%, var(--glow-cool) 0%, transparent 100%),
+		radial-gradient(217.89% 126.62% at 48.04% 0%, var(--glow-warm) 0%, transparent 100%);
+	filter: contrast(1.5);
+}
+
+body::after {
+	background-image: radial-gradient(var(--brand) 0.5px, transparent 0.5px);
+	background-size: 16px 16px;
+	opacity: 0.2;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+	color: var(--text);
+	line-height: 1.15;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+}
+
+p {
+	text-wrap: pretty;
+}
+
+a {
+	color: var(--brand);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+}
+
+a:hover {
+	color: var(--brand-strong);
+}
+
+:focus-visible {
+	outline: 2px solid var(--brand);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+::selection {
+	background: var(--brand);
+	color: var(--bg);
+}
+
+/* Layout helpers */
+.container {
+	width: 100%;
+	max-width: calc(var(--content) + 2 * var(--gutter));
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.skip-link {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	z-index: 100;
+	padding: 0.5rem 1rem;
+	border-radius: var(--radius-pill);
+	background: var(--text);
+	color: var(--bg);
+	font-weight: 600;
+	transform: translateY(-200%);
+}
+
+.skip-link:focus {
+	transform: none;
+}
