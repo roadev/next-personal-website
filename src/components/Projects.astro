@@ -42,12 +42,18 @@ const { locale } = Astro.props;
 								<li class="tag">{tag}</li>
 							))}
 						</ul>
-						{project.link && (
-							<a class="link" href={project.link.url} target="_blank" rel="noopener">
-								{project.link.label[locale]}
-								<Icon name="external" size={14} />
-								<span class="visually-hidden">{ui.opensInNewTab[locale]}</span>
-							</a>
+						{project.links && (
+							<ul class="links" role="list">
+								{project.links.map((link) => (
+									<li>
+										<a class="link" href={link.url} target="_blank" rel="noopener">
+											{link.label[locale]}
+											<Icon name="external" size={14} />
+											<span class="visually-hidden">{ui.opensInNewTab[locale]}</span>
+										</a>
+									</li>
+								))}
+							</ul>
 						)}
 					</div>
 				</li>
@@ -144,11 +150,16 @@ const { locale } = Astro.props;
 		padding-top: 0.375rem;
 	}
 
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1.25rem;
+	}
+
 	.link {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.375rem;
-		align-self: flex-start;
 		font-size: 0.875rem;
 		font-weight: 600;
 	}

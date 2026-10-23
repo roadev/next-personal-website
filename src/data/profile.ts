@@ -5,7 +5,7 @@ import bunnyStudio from '../assets/projects/bunny-studio.png';
 import digitalAgronomist from '../assets/projects/digital-agronomist.png';
 import homelab from '../assets/projects/homelab.png';
 import loginWidget from '../assets/projects/login-widget.png';
-import rodarLibre from '../assets/projects/rodar-libre.png';
+import rodarLibre from '../assets/projects/rodar-libre.jpg';
 import ruedataLite from '../assets/projects/ruedata-lite.jpg';
 
 export const locales = ['en', 'es'] as const;
@@ -58,7 +58,7 @@ export interface Project {
 	/** `contain` for screenshots whose aspect ratio is far from the 16:10 card. */
 	imageFit?: 'cover' | 'contain';
 	tags: string[];
-	link?: { url: string; label: Localized<string> };
+	links?: { url: string; label: Localized<string> }[];
 	stats?: Localized<string>[];
 }
 
@@ -344,20 +344,26 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'rodar-libre',
-		name: { en: 'Rodar Libre', es: 'Rodar Libre' },
-		context: { en: 'Android app', es: 'App Android' },
+		name: { en: 'RodarLibre', es: 'RodarLibre' },
+		context: { en: 'Founder, CEO & CTO · iOS and Android', es: 'Fundador, CEO y CTO · iOS y Android' },
 		description: {
-			en: "RodarLibre is the first app for drivers in Colombia. It helps users manage their vehicle's documentation, maintenance, and expenses in one place. Future impact includes smart proactive maintenance reminders and community-driven riding clubs.",
-			es: 'RodarLibre es la primera aplicación para conductores en Colombia. Ayuda a los usuarios a gestionar la documentación, el mantenimiento y los gastos de su vehículo en un solo lugar. El impacto futuro incluye recordatorios inteligentes de mantenimiento proactivo y clubes de conductores impulsados por la comunidad.',
+			en: 'The first app for drivers in Colombia. Riders log fuel fill-ups and oil changes, sync their vehicle and documents from RUNT, get expiry reminders, check traffic fines in SIMIT, and find events and discounts from partner workshops, shops, riding clubs and insurers.',
+			es: 'La primera app para conductores en Colombia. Permite registrar tanqueadas y cambios de aceite, sincronizar el vehículo y sus documentos con el RUNT, recibir avisos de vencimiento, consultar multas en el SIMIT y encontrar eventos y descuentos de talleres, tiendas, clubes moteros y aseguradoras aliadas.',
 		},
 		image: rodarLibre,
-		imageAlt: { en: 'Rodar Libre sign-in screen', es: 'Pantalla de inicio de sesión de Rodar Libre' },
-		imageFit: 'contain',
-		tags: ['React Native', 'Android'],
-		link: {
-			url: 'https://play.google.com/store/apps/details?id=com.rodarlibre',
-			label: { en: 'Get it on Google Play', es: 'Disponible en Google Play' },
+		imageAlt: {
+			en: 'Three RodarLibre screens: RUNT sync, partner events and a clean traffic-fines check',
+			es: 'Tres pantallas de RodarLibre: sincronización con el RUNT, eventos de aliados y consulta de multas sin pendientes',
 		},
+		tags: ['React Native', 'iOS', 'Android'],
+		links: [
+			{ url: 'https://rodarlibre.co', label: { en: 'rodarlibre.co', es: 'rodarlibre.co' } },
+			{ url: 'https://apps.apple.com/us/app/rodarlibre/id6762035476', label: { en: 'App Store', es: 'App Store' } },
+			{
+				url: 'https://play.google.com/store/apps/details?id=com.rodarlibre',
+				label: { en: 'Google Play', es: 'Google Play' },
+			},
+		],
 		stats: [
 			{ en: '500+ installs', es: '500+ descargas' },
 			{ en: '5.0 ★ rating', es: '5.0 ★ de calificación' },
