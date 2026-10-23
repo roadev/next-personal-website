@@ -4,7 +4,7 @@ Personal site of Juan Roa, built with [Astro](https://astro.build) as a static s
 
 ## Develop
 
-Requires Node.js 22+ and pnpm.
+Requires Node.js 24.22.1 or newer (see `.nvmrc`) and pnpm.
 
 ```sh
 pnpm install
