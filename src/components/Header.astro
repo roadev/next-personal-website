@@ -57,6 +57,13 @@ const home = homePath[locale];
 </header>
 
 <script>
+	const header = document.querySelector<HTMLElement>('.site-header');
+	if (header) {
+		const update = () => header.toggleAttribute('data-scrolled', window.scrollY > 8);
+		update();
+		window.addEventListener('scroll', update, { passive: true });
+	}
+
 	const clock = document.querySelector<HTMLTimeElement>('[data-clock]');
 	if (clock) {
 		const format = new Intl.DateTimeFormat(clock.dataset.locale, {
@@ -89,21 +96,13 @@ const home = homePath[locale];
 		z-index: -1;
 		background: linear-gradient(rgb(10 10 10 / 0.85) 55%, transparent);
 		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.2s ease;
 	}
 
-	/* Keep the background glow visible at the top; the fade appears as the page scrolls. */
-	@supports (animation-timeline: scroll()) {
-		.site-header::before {
-			animation: header-fade linear both;
-			animation-timeline: scroll();
-			animation-range: 0 120px;
-		}
-	}
-
-	@keyframes header-fade {
-		from {
-			opacity: 0;
-		}
+	/* Keep the background glow visible at the top; the fade appears once the page scrolls. */
+	.site-header[data-scrolled]::before {
+		opacity: 1;
 	}
 
 	.bar {
