@@ -14,6 +14,11 @@ export default defineConfig({
 			prefixDefaultLocale: false,
 		},
 	},
+	vite: {
+		// Plain CSS only; an inline config stops Vite from picking up a PostCSS
+		// config from a parent directory (e.g. a checkout of the old Next.js app).
+		css: { postcss: {} },
+	},
 	integrations: [
 		sitemap({
 			i18n: {
