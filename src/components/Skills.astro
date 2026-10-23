@@ -1,0 +1,57 @@
+---
+import { skills, type Locale } from '../data/profile';
+import { ui } from '../i18n/ui';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<section id="skills" class="section container" aria-labelledby="skills-title">
+	<h2 id="skills-title" class="section-title">{ui.headings.skills[locale]}</h2>
+
+	<div class="groups">
+		{
+			skills.map((group) => (
+				<div class="group">
+					<h3 id={`skills-${group.id}`}>{group.title[locale]}</h3>
+					<ul class="tags" role="list" aria-labelledby={`skills-${group.id}`}>
+						{group.items.map((item) => (
+							<li class="tag">{item}</li>
+						))}
+					</ul>
+				</div>
+			))
+		}
+	</div>
+</section>
+
+<style>
+	.groups {
+		display: grid;
+		gap: 1.5rem 2rem;
+	}
+
+	@media (min-width: 640px) {
+		.groups {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	h3 {
+		margin-bottom: 0.625rem;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--text-muted);
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+</style>

@@ -1,0 +1,72 @@
+---
+import type { Experience, Locale } from '../data/profile';
+import { formatMonth, ui } from '../i18n/ui';
+
+interface Props {
+	item: Experience;
+	locale: Locale;
+}
+
+const { item, locale } = Astro.props;
+---
+
+<li class="job">
+	<div class="head">
+		<h3>{item.company}</h3>
+		<p class="dates">
+			<time datetime={item.start}>{formatMonth(item.start, locale)}</time>
+			<span aria-hidden="true">–</span>
+			<span class="visually-hidden">{ui.dateRangeTo[locale]}</span>
+			{item.end ? <time datetime={item.end}>{formatMonth(item.end, locale)}</time> : ui.present[locale]}
+		</p>
+	</div>
+	<p class="title">{item.role[locale]}</p>
+	<ul class="bullets">
+		{item.bullets[locale].map((bullet) => <li>{bullet}</li>)}
+	</ul>
+</li>
+
+<style>
+	.job + .job {
+		margin-top: 2rem;
+	}
+
+	.head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.125rem 1rem;
+	}
+
+	h3 {
+		font-size: 1.25rem;
+		letter-spacing: -0.015em;
+	}
+
+	.dates {
+		display: flex;
+		gap: 0.375em;
+		font-size: 0.875rem;
+		color: var(--text-muted);
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+	}
+
+	.title {
+		margin-top: 0.125rem;
+		font-size: 0.9375rem;
+		color: var(--brand);
+	}
+
+	.bullets {
+		display: grid;
+		gap: 0.5rem;
+		margin-top: 0.75rem;
+		padding-left: 1.125rem;
+	}
+
+	.bullets li::marker {
+		color: var(--brand);
+	}
+</style>

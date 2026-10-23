@@ -1,0 +1,92 @@
+---
+import { experience, type Locale } from '../data/profile';
+import { ui } from '../i18n/ui';
+import ExperienceItem from './ExperienceItem.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+const featured = experience.filter((item) => item.featured);
+const earlier = experience.filter((item) => !item.featured);
+---
+
+<section id="experience" class="section container" aria-labelledby="experience-title">
+	<h2 id="experience-title" class="section-title">{ui.headings.experience[locale]}</h2>
+
+	<ol role="list">
+		{featured.map((item) => <ExperienceItem item={item} locale={locale} />)}
+	</ol>
+
+	{
+		earlier.length > 0 && (
+			<details class="earlier">
+				<summary>
+					{ui.earlierExperience[locale]}
+					<span class="count">({earlier.length})</span>
+					<Icon name="chevron" class="chevron" />
+				</summary>
+				<ol role="list">
+					{earlier.map((item) => (
+						<ExperienceItem item={item} locale={locale} />
+					))}
+				</ol>
+			</details>
+		)
+	}
+</section>
+
+<style>
+	.earlier {
+		margin-top: 2.5rem;
+		border-top: 1px solid var(--border-weak);
+	}
+
+	summary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-top: 1.5rem;
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-pill);
+		background: var(--surface);
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--text);
+		cursor: pointer;
+		list-style: none;
+		transition: border-color 0.15s ease;
+	}
+
+	summary::-webkit-details-marker {
+		display: none;
+	}
+
+	summary:hover {
+		border-color: var(--brand);
+	}
+
+	summary:focus-visible {
+		border-radius: var(--radius-pill);
+	}
+
+	.count {
+		font-weight: 400;
+		color: var(--text-muted);
+	}
+
+	summary :global(.chevron) {
+		transition: transform 0.2s ease;
+	}
+
+	.earlier[open] summary :global(.chevron) {
+		transform: rotate(180deg);
+	}
+
+	.earlier > ol {
+		margin-top: 2rem;
+	}
+</style>

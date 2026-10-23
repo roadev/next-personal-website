@@ -1,0 +1,155 @@
+---
+import { Image } from 'astro:assets';
+import { projects, type Locale } from '../data/profile';
+import { ui } from '../i18n/ui';
+import Icon from './Icon.astro';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<section id="projects" class="section container" aria-labelledby="projects-title">
+	<h2 id="projects-title" class="section-title">{ui.headings.projects[locale]}</h2>
+
+	<ul class="grid" role="list">
+		{
+			projects.map((project) => (
+				<li class="card">
+					<div class:list={['media', project.imageFit === 'contain' && 'contain']}>
+						<Image
+							src={project.image}
+							alt={project.imageAlt[locale]}
+							widths={[360, 720, 1080].filter((w) => w <= project.image.width)}
+							sizes="(min-width: 800px) 360px, calc(100vw - 2rem)"
+						/>
+					</div>
+					<div class="body">
+						<p class="context">{project.context[locale]}</p>
+						<h3>{project.name[locale]}</h3>
+						<p class="description">{project.description[locale]}</p>
+						{project.stats && (
+							<ul class="stats" role="list">
+								{project.stats.map((stat) => (
+									<li>{stat[locale]}</li>
+								))}
+							</ul>
+						)}
+						<ul class="tags" role="list" aria-label={ui.tech[locale]}>
+							{project.tags.map((tag) => (
+								<li class="tag">{tag}</li>
+							))}
+						</ul>
+						{project.link && (
+							<a class="link" href={project.link.url} target="_blank" rel="noopener">
+								{project.link.label[locale]}
+								<Icon name="external" size={14} />
+								<span class="visually-hidden">{ui.opensInNewTab[locale]}</span>
+							</a>
+						)}
+					</div>
+				</li>
+			))
+		}
+	</ul>
+</section>
+
+<style>
+	.grid {
+		display: grid;
+		gap: 1rem;
+	}
+
+	@media (min-width: 640px) {
+		.grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	.card {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		background: var(--surface);
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+	}
+
+	.media {
+		position: relative;
+		aspect-ratio: 16 / 10;
+		border-bottom: 1px solid var(--border-weak);
+		background: var(--surface-raised);
+	}
+
+	.media img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		max-width: none;
+		object-fit: cover;
+		object-position: top center;
+	}
+
+	.media.contain img {
+		inset: 1rem;
+		width: calc(100% - 2rem);
+		height: calc(100% - 2rem);
+		object-fit: contain;
+		object-position: center;
+	}
+
+	.body {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		gap: 0.625rem;
+		padding: 1.25rem;
+	}
+
+	.context {
+		font-size: 0.8125rem;
+		font-weight: 500;
+		color: var(--brand);
+	}
+
+	h3 {
+		font-size: 1.1875rem;
+		letter-spacing: -0.015em;
+	}
+
+	.description {
+		font-size: 0.9375rem;
+	}
+
+	.stats {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--text);
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.375rem;
+		margin-top: auto;
+		padding-top: 0.375rem;
+	}
+
+	.link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.375rem;
+		align-self: flex-start;
+		font-size: 0.875rem;
+		font-weight: 600;
+	}
+</style>

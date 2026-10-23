@@ -1,0 +1,209 @@
+---
+import { Image } from 'astro:assets';
+import { person, social, type Locale } from '../data/profile';
+import { ui } from '../i18n/ui';
+import Icon from './Icon.astro';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<section class="hero container" aria-labelledby="hero-title">
+	<div class="intro">
+		<Image
+			src={person.avatar}
+			alt={ui.avatarAlt[locale]}
+			width={112}
+			height={112}
+			densities={[1, 2]}
+			loading="eager"
+			priority
+			class="avatar"
+		/>
+		<div>
+			<h1 id="hero-title">{person.name}</h1>
+			<p class="role">{person.role[locale]}</p>
+		</div>
+	</div>
+
+	<p class="bio">{person.bio[locale]}</p>
+
+	<ul class="facts" role="list">
+		<li class="location">
+			<Icon name="pin" />
+			{person.location[locale]}
+		</li>
+		<li class="languages">
+			<Icon name="globe" />
+			<span class="visually-hidden">{ui.languages[locale]}:</span>
+			<ul role="list" class="chips">
+				{person.languages[locale].map((language) => <li class="chip">{language}</li>)}
+			</ul>
+		</li>
+	</ul>
+
+	<nav aria-label={ui.socialNav[locale]}>
+		<ul class="social" role="list">
+			{
+				social.map((link) => (
+					<li>
+						<a class="button" href={link.url} rel={link.id === 'email' ? undefined : 'me noopener'}>
+							<Icon name={link.id} />
+							{link.label}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+</section>
+
+<style>
+	.hero {
+		padding-block: clamp(2.5rem, 8vw, 5rem) 1rem;
+	}
+
+	.intro {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1rem 1.5rem;
+	}
+
+	.avatar {
+		width: 5.5rem;
+		height: 5.5rem;
+		border-radius: 50%;
+		border: 1px solid var(--border);
+		object-fit: cover;
+	}
+
+	h1 {
+		font-size: clamp(2.75rem, 9vw, 4.25rem);
+		font-weight: 800;
+		letter-spacing: -0.045em;
+		line-height: 1;
+	}
+
+	.role {
+		margin-top: 0.5rem;
+		font-size: clamp(1.0625rem, 2.6vw, 1.375rem);
+		line-height: 1.35;
+		color: var(--brand);
+	}
+
+	.bio {
+		margin-top: 1.75rem;
+		max-width: 40rem;
+		font-size: 1.0625rem;
+		color: var(--text-weak);
+	}
+
+	.facts {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.75rem 1.5rem;
+		margin-top: 1.5rem;
+		font-size: 0.9375rem;
+		color: var(--text);
+	}
+
+	.facts > li {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.facts svg {
+		flex: none;
+		color: var(--accent);
+	}
+
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.375rem;
+	}
+
+	.chip {
+		padding: 0.125rem 0.625rem;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-pill);
+		font-size: 0.8125rem;
+	}
+
+	.social {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: 1.75rem;
+	}
+
+	.button {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-pill);
+		background: var(--surface);
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--text);
+		text-decoration: none;
+		transition:
+			background-color 0.15s ease,
+			border-color 0.15s ease;
+	}
+
+	.button:hover {
+		border-color: var(--brand);
+		background: var(--brand-bg);
+		color: var(--text);
+	}
+
+	.button:focus-visible {
+		border-radius: var(--radius-pill);
+	}
+
+	@media (min-width: 640px) {
+		.avatar {
+			width: 7rem;
+			height: 7rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		.intro,
+		.bio,
+		.facts,
+		.social {
+			animation: fade-up 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+		}
+
+		.bio {
+			animation-delay: 80ms;
+		}
+
+		.facts {
+			animation-delay: 160ms;
+		}
+
+		.social {
+			animation-delay: 240ms;
+		}
+	}
+
+	@keyframes fade-up {
+		from {
+			opacity: 0;
+			transform: translateY(0.75rem);
+		}
+	}
+</style>

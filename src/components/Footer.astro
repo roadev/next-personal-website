@@ -1,0 +1,82 @@
+---
+import { person, social, type Locale } from '../data/profile';
+import { ui } from '../i18n/ui';
+import Icon from './Icon.astro';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+	<div class="container inner">
+		<p>© {year} · <span class="name">{person.name}</span></p>
+		<nav aria-label={ui.socialNav[locale]}>
+			<ul role="list">
+				{
+					social.map((link) => (
+						<li>
+							<a href={link.url} aria-label={link.label} title={link.label}>
+								<Icon name={link.id} size={18} />
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		margin-top: clamp(4rem, 10vw, 6rem);
+		padding-block: 1.5rem;
+		border-top: 1px solid var(--border-weak);
+	}
+
+	.inner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	p {
+		font-size: 0.875rem;
+		color: var(--text-muted);
+	}
+
+	.name {
+		color: var(--text);
+	}
+
+	ul {
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	a {
+		display: grid;
+		place-items: center;
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: var(--radius-pill);
+		color: var(--text-weak);
+		transition:
+			color 0.15s ease,
+			background-color 0.15s ease;
+	}
+
+	a:hover {
+		color: var(--text);
+		background: var(--surface-hover);
+	}
+
+	a:focus-visible {
+		border-radius: var(--radius-pill);
+	}
+</style>
