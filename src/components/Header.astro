@@ -81,6 +81,31 @@ const home = homePath[locale];
 		padding: 0.75rem var(--gutter);
 	}
 
+	/* Fade content out under the bar so it does not show between the pills. */
+	.site-header::before {
+		content: '';
+		position: absolute;
+		inset: 0 0 -1rem;
+		z-index: -1;
+		background: linear-gradient(rgb(10 10 10 / 0.85) 55%, transparent);
+		pointer-events: none;
+	}
+
+	/* Keep the background glow visible at the top; the fade appears as the page scrolls. */
+	@supports (animation-timeline: scroll()) {
+		.site-header::before {
+			animation: header-fade linear both;
+			animation-timeline: scroll();
+			animation-range: 0 120px;
+		}
+	}
+
+	@keyframes header-fade {
+		from {
+			opacity: 0;
+		}
+	}
+
 	.bar {
 		display: flex;
 		align-items: center;
