@@ -23,7 +23,7 @@ const { locale } = Astro.props;
 							src={project.image}
 							alt={project.imageAlt[locale]}
 							widths={[360, 720, 1080].filter((w) => w <= project.image.width)}
-							sizes="(min-width: 800px) 360px, calc(100vw - 2rem)"
+							sizes="(min-width: 800px) 360px, (min-width: 640px) 50vw, calc(100vw - 2rem)"
 						/>
 					</div>
 					<div class="body">
