@@ -365,7 +365,7 @@ export const projects: Project[] = [
 			},
 		],
 		stats: [
-			{ en: '500+ installs', es: '500+ descargas' },
+			{ en: '5,000+ downloads on iOS and Android', es: 'Más de 5.000 descargas en iOS y Android' },
 			{ en: '5.0 ★ rating', es: '5.0 ★ de calificación' },
 			{ en: 'Ad-free', es: 'Sin anuncios' },
 		],
