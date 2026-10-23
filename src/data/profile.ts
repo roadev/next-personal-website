@@ -2,7 +2,7 @@ import type { ImageMetadata } from 'astro';
 
 import avatar from '../assets/avatar.jpg';
 import bunnyStudio from '../assets/projects/bunny-studio.png';
-import digitalAgronomist from '../assets/projects/digital-agronomist.png';
+import digitalAgronomist from '../assets/projects/digital-agronomist-rag.webp';
 import homelab from '../assets/projects/homelab.png';
 import loginWidget from '../assets/projects/login-widget.png';
 import rodarLibre from '../assets/projects/rodar-libre.jpg';
@@ -332,19 +332,19 @@ export const projects: Project[] = [
 		name: { en: 'Digital Agronomist', es: 'El Agrónomo Digital' },
 		context: { en: 'SoilNet LLC · UW-Whitewater', es: 'SoilNet LLC · UW-Whitewater' },
 		description: {
-			en: 'Platform that turns soil and plant lab results into nutrient insights for farmers. I led its development (React, Node.js, MariaDB, Python ETL) and the machine learning models that improved nitrogen, phosphorus and potassium predictions.',
-			es: 'Plataforma que convierte resultados de laboratorio de suelos y plantas en información de nutrientes para agricultores. Lideré su desarrollo (React, Node.js, MariaDB, ETL en Python) y los modelos de machine learning que mejoraron la predicción de nitrógeno, fósforo y potasio.',
+			en: 'Bilingual (EN/ES) RAG chatbot that acts as a sugarcane agronomy expert: it answers from technical and agronomic documents and cites its sources in every reply.',
+			es: 'Chatbot RAG bilingüe (EN/ES) que actúa como experto en agronomía de la caña de azúcar: responde a partir de documentos técnicos y agronómicos y cita sus fuentes en cada respuesta.',
 		},
 		image: digitalAgronomist,
 		imageAlt: {
-			en: 'Digital Agronomist dashboard with a plant analysis of corn and recent lab results',
-			es: 'Panel de El Agrónomo Digital con un análisis foliar de maíz y resultados de laboratorio recientes',
+			en: 'Digital Agronomist chat answering a question about sugarcane yield and sucrose, citing sources E1 to E5',
+			es: 'Chat de El Agrónomo Digital respondiendo una pregunta sobre producción de caña y sacarosa, citando las fuentes E1 a E5',
 		},
-		tags: ['React', 'Node.js', 'MariaDB', 'Python', 'Machine Learning'],
+		tags: ['RAG', 'LLM', 'Python', 'React', 'Node.js', 'MariaDB', 'Machine Learning'],
 	},
 	{
 		id: 'rodar-libre',
-		name: { en: 'RodarLibre', es: 'RodarLibre' },
+		name: { en: 'Rodar Libre', es: 'Rodar Libre' },
 		context: { en: 'Founder, CEO & CTO · iOS and Android', es: 'Fundador, CEO y CTO · iOS y Android' },
 		description: {
 			en: 'The first app for drivers in Colombia. Riders log fuel fill-ups and oil changes, sync their vehicle and documents from RUNT, get expiry reminders, check traffic fines in SIMIT, and find events and discounts from partner workshops, shops, riding clubs and insurers.',
@@ -352,8 +352,8 @@ export const projects: Project[] = [
 		},
 		image: rodarLibre,
 		imageAlt: {
-			en: 'Three RodarLibre screens: RUNT sync, partner events and a clean traffic-fines check',
-			es: 'Tres pantallas de RodarLibre: sincronización con el RUNT, eventos de aliados y consulta de multas sin pendientes',
+			en: 'Three Rodar Libre screens: RUNT sync, partner events and a clean traffic-fines check',
+			es: 'Tres pantallas de Rodar Libre: sincronización con el RUNT, eventos de aliados y consulta de multas sin pendientes',
 		},
 		tags: ['React Native', 'iOS', 'Android'],
 		links: [
