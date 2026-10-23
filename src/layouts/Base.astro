@@ -2,17 +2,22 @@
 import '@fontsource-variable/inter';
 import '../styles/global.css';
 
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import type { Locale } from '../data/profile';
+import { ui } from '../i18n/ui';
+
 interface Props {
+	locale: Locale;
 	title: string;
 	description: string;
 }
 
-const { title, description } = Astro.props;
-const lang = Astro.currentLocale ?? 'en';
+const { locale, title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={locale}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,8 +25,11 @@ const lang = Astro.currentLocale ?? 'en';
 		<meta name="description" content={description} />
 	</head>
 	<body>
-		<main id="main">
+		<a class="skip-link" href="#main">{ui.skipToContent[locale]}</a>
+		<Header locale={locale} />
+		<main id="main" tabindex="-1">
 			<slot />
 		</main>
+		<Footer locale={locale} />
 	</body>
 </html>

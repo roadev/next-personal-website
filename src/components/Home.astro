@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import { seo, type Locale } from '../data/profile';
+import Education from './Education.astro';
+import Experience from './Experience.astro';
+import Hero from './Hero.astro';
+import Projects from './Projects.astro';
+import Skills from './Skills.astro';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<Base locale={locale} title={seo.title[locale]} description={seo.description[locale]}>
+	<Hero locale={locale} />
+	<Experience locale={locale} />
+	<Projects locale={locale} />
+	<Skills locale={locale} />
+	<Education locale={locale} />
+</Base>

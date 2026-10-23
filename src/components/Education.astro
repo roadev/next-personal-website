@@ -1,0 +1,56 @@
+---
+import { education, type Locale } from '../data/profile';
+import { ui } from '../i18n/ui';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<section id="education" class="section container" aria-labelledby="education-title">
+	<h2 id="education-title" class="section-title">{ui.headings.education[locale]}</h2>
+
+	<ul class="list" role="list">
+		{
+			education.map((entry) => (
+				<li>
+					<h3>{entry.degree[locale]}</h3>
+					<p>{entry.institution}</p>
+				</li>
+			))
+		}
+	</ul>
+</section>
+
+<style>
+	.list {
+		display: grid;
+		gap: 1rem;
+	}
+
+	@media (min-width: 640px) {
+		.list {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	li {
+		padding: 1.25rem;
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		background: var(--surface);
+	}
+
+	h3 {
+		font-size: 1.0625rem;
+		letter-spacing: -0.01em;
+	}
+
+	p {
+		margin-top: 0.25rem;
+		font-size: 0.9375rem;
+		color: var(--text-muted);
+	}
+</style>

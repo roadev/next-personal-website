@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import { locales } from '../data/profile';
+import { homePath, ui } from '../i18n/ui';
+---
+
+<Base locale="en" title={`${ui.notFound.title.en} · Juan Roa`} description={ui.notFound.body.en}>
+	<section class="not-found container" aria-labelledby="not-found-title">
+		<p class="code" aria-hidden="true">404</p>
+		<h1 id="not-found-title">{ui.notFound.title.en}</h1>
+		<div class="messages">
+			{
+				locales.map((locale) => (
+					<div lang={locale}>
+						{locale !== 'en' && <p class="title">{ui.notFound.title[locale]}</p>}
+						<p>{ui.notFound.body[locale]}</p>
+						<a class="button" href={homePath[locale]}>
+							{ui.notFound.back[locale]}
+						</a>
+					</div>
+				))
+			}
+		</div>
+	</section>
+</Base>
+
+<style>
+	.not-found {
+		padding-block: clamp(4rem, 14vw, 8rem) 0;
+	}
+
+	.code {
+		font-size: clamp(4rem, 16vw, 7rem);
+		font-weight: 800;
+		line-height: 1;
+		letter-spacing: -0.05em;
+		color: var(--brand);
+	}
+
+	h1 {
+		margin-top: 0.5rem;
+		font-size: clamp(1.75rem, 5vw, 2.5rem);
+		letter-spacing: -0.035em;
+	}
+
+	.messages {
+		display: grid;
+		gap: 2rem;
+		margin-top: 1.5rem;
+	}
+
+	.messages > div {
+		display: grid;
+		justify-items: start;
+		gap: 0.75rem;
+	}
+
+	.title {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--text);
+	}
+
+	.button {
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-pill);
+		background: var(--surface);
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--text);
+		text-decoration: none;
+	}
+
+	.button:hover {
+		border-color: var(--brand);
+		background: var(--brand-bg);
+		color: var(--text);
+	}
+</style>

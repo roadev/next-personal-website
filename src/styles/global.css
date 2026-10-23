@@ -199,3 +199,35 @@ a:hover {
 .skip-link:focus {
 	transform: none;
 }
+
+/* Sections */
+.section {
+	padding-top: clamp(3.5rem, 9vw, 5.5rem);
+	scroll-margin-top: var(--header-h);
+}
+
+.section-title {
+	margin-bottom: 1.75rem;
+	font-size: clamp(1.875rem, 5vw, 2.5rem);
+	font-weight: 800;
+	letter-spacing: -0.035em;
+}
+
+/* Text chips shared by projects and skills */
+.tag {
+	padding: 0.1875rem 0.625rem;
+	border: 1px solid var(--border);
+	border-radius: var(--radius-pill);
+	background: var(--surface-raised);
+	font-size: 0.8125rem;
+	line-height: 1.5;
+	color: var(--text);
+}
+
+main {
+	flex: 1;
+}
+
+main:focus {
+	outline: none;
+}
